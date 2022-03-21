@@ -1,0 +1,2133 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "企业微信开放 Api",
+    "description": "全面、丰富、清晰的接口手册，涵盖企业内部开发、第三方应用开发以及智慧硬件开发的方方面，满足各类企业定制化开发，提供软硬一体的场景化方案。",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://qyapi.weixin.qq.com/cgi-bin",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/gettoken": {
+      "get": {
+        "tags": [
+          "建立连接"
+        ],
+        "summary": "获取 access_token",
+        "operationId": "获取access_token",
+        "parameters": [
+          {
+            "name": "corpid",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "{{corpid}}"
+            }
+          },
+          {
+            "name": "corpsecret",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "{{corpsecret}}"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "nginx"
+                    },
+                    "example": "nginx"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Tue, 08 Mar 2022 12:16:50 GMT"
+                    },
+                    "example": "Tue, 08 Mar 2022 12:16:50 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "277"
+                    },
+                    "example": "277"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Error-Code": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "0"
+                    },
+                    "example": "0"
+                  }
+                }
+              },
+              "Error-Msg": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "example": "ok"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ok200"
+                },
+                "example": {
+                  "errcode": 0,
+                  "errmsg": "ok",
+                  "access_token": "TLnJZ_LjhJ0PdXwUTXfe_7GzH86q0kA8Gd592wztfIIGaK4H3Yv6IwhHHY8IMqW7tdY_LBOjENOdMzqpIZHfBfaPRj9sKGh4qHBm_0ZfQ3jDY8j8Z3KbJFb9jdJjp5AqkAl9ueMoQX5498AdCM5NadpwNHvK8o1huT96tOWz4cUyVI0QKi8PbwOjqQoH2sJVXt5LpBCBzM3HSYiq4ycf5w",
+                  "expires_in": 7200
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "建立连接"
+        ],
+        "summary": "New Request",
+        "operationId": "NewRequest",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/get": {
+      "get": {
+        "tags": [
+          "成员管理"
+        ],
+        "summary": "读取成员",
+        "operationId": "读取成员",
+        "parameters": [
+          {
+            "name": "userid",
+            "in": "query",
+            "description": "成员UserID。对应管理端的帐号，企业内必须唯一。不区分大小写，长度为1~64个字节",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "Dumbledore"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "nginx"
+                    },
+                    "example": "nginx"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Tue, 08 Mar 2022 12:31:34 GMT"
+                    },
+                    "example": "Tue, 08 Mar 2022 12:31:34 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "789"
+                    },
+                    "example": "789"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Error-Code": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "0"
+                    },
+                    "example": "0"
+                  }
+                }
+              },
+              "Error-Msg": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "example": "ok"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ok2001"
+                },
+                "example": {
+                  "errcode": 0,
+                  "errmsg": "ok",
+                  "userid": "Dumbledore",
+                  "name": "邓布利多",
+                  "department": [
+                    1
+                  ],
+                  "position": "校长",
+                  "mobile": "18800000001",
+                  "gender": "1",
+                  "email": "dumbledore@hogwarts.edu",
+                  "avatar": "http://wework.qpic.cn/bizmail/2DFvrT7tPibhVxbCkGEAC1Vt2l1S66kHkKU1zenPgLpAficicsggia9XQA/0",
+                  "status": 4,
+                  "isleader": 1,
+                  "extattr": {
+                    "attrs": []
+                  },
+                  "english_name": "Dumbledore",
+                  "telephone": "00000",
+                  "enable": 1,
+                  "hide_mobile": 0,
+                  "order": [
+                    268443648
+                  ],
+                  "external_profile": {
+                    "external_attr": [],
+                    "external_corp_name": ""
+                  },
+                  "main_department": 1,
+                  "qr_code": "https://open.work.weixin.qq.com/wwopen/userQRCode?vcode=vcd682e2f59d2321a7",
+                  "alias": "Dumbledore",
+                  "is_leader_in_dept": [
+                    1
+                  ],
+                  "address": "苏格兰",
+                  "thumb_avatar": "http://wework.qpic.cn/bizmail/2DFvrT7tPibhVxbCkGEAC1Vt2l1S66kHkKU1zenPgLpAficicsggia9XQA/100",
+                  "direct_leader": []
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/simplelist": {
+      "get": {
+        "tags": [
+          "成员管理"
+        ],
+        "summary": "获取部门成员",
+        "operationId": "获取部门成员",
+        "parameters": [
+          {
+            "name": "department_id",
+            "in": "query",
+            "description": "获取的部门id",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "fetch_child",
+            "in": "query",
+            "description": "是否递归获取子部门下面的成员：1-递归获取，0-只获取本部门",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "nginx"
+                    },
+                    "example": "nginx"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Tue, 08 Mar 2022 12:31:54 GMT"
+                    },
+                    "example": "Tue, 08 Mar 2022 12:31:54 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "886"
+                    },
+                    "example": "886"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Error-Code": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "0"
+                    },
+                    "example": "0"
+                  }
+                }
+              },
+              "Error-Msg": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "example": "ok"
+                  }
+                }
+              }
+            },
+            "content": {
+              "application/json; charset=UTF-8": {
+                "schema": {
+                  "$ref": "#/components/schemas/ok2002"
+                },
+                "example": {
+                  "errcode": 0,
+                  "errmsg": "ok",
+                  "userlist": [
+                    {
+                      "userid": "Dumbledore",
+                      "name": "邓布利多",
+                      "department": [
+                        1
+                      ]
+                    },
+                    {
+                      "userid": "HelgaHufflepuff",
+                      "name": "赫尔加·赫奇帕奇教授",
+                      "department": [
+                        11
+                      ]
+                    },
+                    {
+                      "userid": "RowenaRavenclaw",
+                      "name": "罗伊纳·拉文克劳",
+                      "department": [
+                        10
+                      ]
+                    },
+                    {
+                      "userid": "GodricGryffindor",
+                      "name": "戈德里克·格兰芬多",
+                      "department": [
+                        8
+                      ]
+                    },
+                    {
+                      "userid": "SeverusSnape",
+                      "name": "西弗勒斯·斯内普",
+                      "department": [
+                        9
+                      ]
+                    },
+                    {
+                      "userid": "JinJiXiaoMao",
+                      "name": "李颉",
+                      "department": [
+                        9
+                      ]
+                    },
+                    {
+                      "userid": "RonWeasley",
+                      "name": "罗恩·韦斯莱",
+                      "department": [
+                        8
+                      ]
+                    },
+                    {
+                      "userid": "aaa",
+                      "name": "大壮",
+                      "department": [
+                        17
+                      ]
+                    },
+                    {
+                      "userid": "lisi",
+                      "name": "李四",
+                      "department": [
+                        20
+                      ]
+                    },
+                    {
+                      "userid": "07d719eee72dea868bb1c194b406d11d",
+                      "name": "伏地魔",
+                      "department": [
+                        9
+                      ]
+                    },
+                    {
+                      "userid": "testaccount",
+                      "name": "测试账号",
+                      "department": [
+                        21
+                      ]
+                    },
+                    {
+                      "userid": "icyforsure",
+                      "name": "德拉克马尔福的女朋友",
+                      "department": [
+                        9
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/list": {
+      "get": {
+        "tags": [
+          "成员管理"
+        ],
+        "summary": "获取部门成员详情1",
+        "operationId": "获取部门成员详情1",
+        "parameters": [
+          {
+            "name": "department_id",
+            "in": "query",
+            "description": "获取的部门id",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          },
+          {
+            "name": "fetch_child",
+            "in": "query",
+            "description": "是否递归获取子部门下面的成员：1-递归获取，0-只获取本部门",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/department/list": {
+      "get": {
+        "tags": [
+          "部门管理"
+        ],
+        "summary": "获取部门列表",
+        "operationId": "获取部门列表",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "部门id。获取指定部门及其下的子部门（以及子部门的子部门等等，递归）。 如果不填，默认获取全量组织架构",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/department/simplelist": {
+      "get": {
+        "tags": [
+          "部门管理"
+        ],
+        "summary": "获取子部门ID列表",
+        "operationId": "获取子部门ID列表",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "部门id。获取指定部门及其下的子部门（以及子部门的子部门等等，递归）。 如果不填，默认获取全量组织架构",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/department/get": {
+      "get": {
+        "tags": [
+          "部门管理"
+        ],
+        "summary": "获取单个部门详情1",
+        "operationId": "获取单个部门详情1",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "部门id",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 9
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/media/upload": {
+      "post": {
+        "tags": [
+          "素材管理"
+        ],
+        "summary": "上传临时素材",
+        "operationId": "上传临时素材",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "媒体文件类型，分别有图片（image）、语音（voice）、视频（video），普通文件（file）",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "file"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "media"
+                ],
+                "type": "object",
+                "properties": {
+                  "media": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/media/uploadimg": {
+      "post": {
+        "tags": [
+          "素材管理"
+        ],
+        "summary": "上传图片",
+        "operationId": "上传图片",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "fieldNameHere"
+                ],
+                "type": "object",
+                "properties": {
+                  "fieldNameHere": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/checkin/getcorpcheckinoption": {
+      "post": {
+        "tags": [
+          "打卡"
+        ],
+        "summary": "获取企业所有打卡规则",
+        "operationId": "获取企业所有打卡规则",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Server": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "nginx"
+                    },
+                    "example": "nginx"
+                  }
+                }
+              },
+              "Date": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "Tue, 08 Mar 2022 13:18:11 GMT"
+                    },
+                    "example": "Tue, 08 Mar 2022 13:18:11 GMT"
+                  }
+                }
+              },
+              "Content-Length": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "6451"
+                    },
+                    "example": "6451"
+                  }
+                }
+              },
+              "Connection": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "keep-alive"
+                    },
+                    "example": "keep-alive"
+                  }
+                }
+              },
+              "Error-Code": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "0"
+                    },
+                    "example": "0"
+                  }
+                }
+              },
+              "Error-Msg": {
+                "content": {
+                  "text/plain": {
+                    "schema": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "example": "ok"
+                  }
+                }
+              }
+            },
+            "content": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/checkin/getcheckinoption": {
+      "post": {
+        "tags": [
+          "打卡"
+        ],
+        "summary": "获取员工打卡规则",
+        "operationId": "获取员工打卡规则",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "datetime",
+                  "useridlist"
+                ],
+                "type": "object",
+                "properties": {
+                  "datetime": {
+                    "type": "integer",
+                    "description": "需要获取规则的日期当天0点的Unix时间戳",
+                    "format": "int32",
+                    "example": 1511971200
+                  },
+                  "useridlist": {
+                    "type": "string",
+                    "description": "需要获取打卡规则的用户列表",
+                    "example": "Dumbledore"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ok200": {
+        "title": "ok200",
+        "required": [
+          "errcode",
+          "errmsg",
+          "access_token",
+          "expires_in"
+        ],
+        "type": "object",
+        "properties": {
+          "errcode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errmsg": {
+            "type": "string"
+          },
+          "access_token": {
+            "type": "string"
+          },
+          "expires_in": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "errcode": 0,
+          "errmsg": "ok",
+          "access_token": "TLnJZ_LjhJ0PdXwUTXfe_7GzH86q0kA8Gd592wztfIIGaK4H3Yv6IwhHHY8IMqW7tdY_LBOjENOdMzqpIZHfBfaPRj9sKGh4qHBm_0ZfQ3jDY8j8Z3KbJFb9jdJjp5AqkAl9ueMoQX5498AdCM5NadpwNHvK8o1huT96tOWz4cUyVI0QKi8PbwOjqQoH2sJVXt5LpBCBzM3HSYiq4ycf5w",
+          "expires_in": 7200
+        }
+      },
+      "ok2001": {
+        "title": "ok2001",
+        "required": [
+          "errcode",
+          "errmsg",
+          "userid",
+          "name",
+          "department",
+          "position",
+          "mobile",
+          "gender",
+          "email",
+          "avatar",
+          "status",
+          "isleader",
+          "extattr",
+          "english_name",
+          "telephone",
+          "enable",
+          "hide_mobile",
+          "order",
+          "external_profile",
+          "main_department",
+          "qr_code",
+          "alias",
+          "is_leader_in_dept",
+          "address",
+          "thumb_avatar",
+          "direct_leader"
+        ],
+        "type": "object",
+        "properties": {
+          "errcode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errmsg": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "department": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": ""
+          },
+          "position": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isleader": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "extattr": {
+            "$ref": "#/components/schemas/Extattr"
+          },
+          "english_name": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "enable": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hide_mobile": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "order": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": ""
+          },
+          "external_profile": {
+            "$ref": "#/components/schemas/ExternalProfile"
+          },
+          "main_department": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "qr_code": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          },
+          "is_leader_in_dept": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": ""
+          },
+          "address": {
+            "type": "string"
+          },
+          "thumb_avatar": {
+            "type": "string"
+          },
+          "direct_leader": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "errcode": 0,
+          "errmsg": "ok",
+          "userid": "Dumbledore",
+          "name": "邓布利多",
+          "department": [
+            1
+          ],
+          "position": "校长",
+          "mobile": "18800000001",
+          "gender": "1",
+          "email": "dumbledore@hogwarts.edu",
+          "avatar": "http://wework.qpic.cn/bizmail/2DFvrT7tPibhVxbCkGEAC1Vt2l1S66kHkKU1zenPgLpAficicsggia9XQA/0",
+          "status": 4,
+          "isleader": 1,
+          "extattr": {
+            "attrs": []
+          },
+          "english_name": "Dumbledore",
+          "telephone": "00000",
+          "enable": 1,
+          "hide_mobile": 0,
+          "order": [
+            268443648
+          ],
+          "external_profile": {
+            "external_attr": [],
+            "external_corp_name": ""
+          },
+          "main_department": 1,
+          "qr_code": "https://open.work.weixin.qq.com/wwopen/userQRCode?vcode=vcd682e2f59d2321a7",
+          "alias": "Dumbledore",
+          "is_leader_in_dept": [
+            1
+          ],
+          "address": "苏格兰",
+          "thumb_avatar": "http://wework.qpic.cn/bizmail/2DFvrT7tPibhVxbCkGEAC1Vt2l1S66kHkKU1zenPgLpAficicsggia9XQA/100",
+          "direct_leader": []
+        }
+      },
+      "Extattr": {
+        "title": "Extattr",
+        "required": [
+          "attrs"
+        ],
+        "type": "object",
+        "properties": {
+          "attrs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "attrs": []
+        }
+      },
+      "ExternalProfile": {
+        "title": "ExternalProfile",
+        "required": [
+          "external_attr",
+          "external_corp_name"
+        ],
+        "type": "object",
+        "properties": {
+          "external_attr": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "external_corp_name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "external_attr": [],
+          "external_corp_name": ""
+        }
+      },
+      "ok2002": {
+        "title": "ok2002",
+        "required": [
+          "errcode",
+          "errmsg",
+          "userlist"
+        ],
+        "type": "object",
+        "properties": {
+          "errcode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "errmsg": {
+            "type": "string"
+          },
+          "userlist": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Userlist"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "errcode": 0,
+          "errmsg": "ok",
+          "userlist": [
+            {
+              "userid": "Dumbledore",
+              "name": "邓布利多",
+              "department": [
+                1
+              ]
+            },
+            {
+              "userid": "HelgaHufflepuff",
+              "name": "赫尔加·赫奇帕奇教授",
+              "department": [
+                11
+              ]
+            },
+            {
+              "userid": "RowenaRavenclaw",
+              "name": "罗伊纳·拉文克劳",
+              "department": [
+                10
+              ]
+            },
+            {
+              "userid": "GodricGryffindor",
+              "name": "戈德里克·格兰芬多",
+              "department": [
+                8
+              ]
+            },
+            {
+              "userid": "SeverusSnape",
+              "name": "西弗勒斯·斯内普",
+              "department": [
+                9
+              ]
+            },
+            {
+              "userid": "JinJiXiaoMao",
+              "name": "李颉",
+              "department": [
+                9
+              ]
+            },
+            {
+              "userid": "RonWeasley",
+              "name": "罗恩·韦斯莱",
+              "department": [
+                8
+              ]
+            },
+            {
+              "userid": "aaa",
+              "name": "大壮",
+              "department": [
+                17
+              ]
+            },
+            {
+              "userid": "lisi",
+              "name": "李四",
+              "department": [
+                20
+              ]
+            },
+            {
+              "userid": "07d719eee72dea868bb1c194b406d11d",
+              "name": "伏地魔",
+              "department": [
+                9
+              ]
+            },
+            {
+              "userid": "testaccount",
+              "name": "测试账号",
+              "department": [
+                21
+              ]
+            },
+            {
+              "userid": "icyforsure",
+              "name": "德拉克马尔福的女朋友",
+              "department": [
+                9
+              ]
+            }
+          ]
+        }
+      },
+      "Userlist": {
+        "title": "Userlist",
+        "required": [
+          "userid",
+          "name",
+          "department"
+        ],
+        "type": "object",
+        "properties": {
+          "userid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "department": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "userid": "Dumbledore",
+          "name": "邓布利多",
+          "department": [
+            1
+          ]
+        }
+      },
+      "Group": {
+        "title": "Group",
+        "required": [
+          "grouptype",
+          "groupid",
+          "checkindate",
+          "spe_workdays",
+          "spe_offdays",
+          "groupname",
+          "need_photo",
+          "wifimac_infos",
+          "note_can_use_local_pic",
+          "allow_apply_offworkday",
+          "loc_infos",
+          "range",
+          "create_time",
+          "white_users",
+          "type",
+          "reporterinfo",
+          "allow_apply_bk_cnt",
+          "option_out_range",
+          "use_face_detect",
+          "allow_apply_bk_day_limit",
+          "schedulelist"
+        ],
+        "type": "object",
+        "properties": {
+          "grouptype": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupid": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "checkindate": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Checkindate"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "workdays": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  5
+                ],
+                "checkintime": [
+                  {
+                    "work_sec": 32400,
+                    "off_work_sec": 61200,
+                    "remind_work_sec": 31800,
+                    "remind_off_work_sec": 61200
+                  },
+                  {
+                    "work_sec": 64800,
+                    "off_work_sec": 79200,
+                    "remind_work_sec": 64200,
+                    "remind_off_work_sec": 79200
+                  }
+                ],
+                "noneed_offwork": false,
+                "limit_aheadtime": 0,
+                "flex_on_duty_time": 0,
+                "flex_off_duty_time": 0
+              }
+            ]
+          },
+          "spe_workdays": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "spe_offdays": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/SpeOffday"
+                },
+                {
+                  "$ref": "#/components/schemas/SpeOffday1"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "timestamp": 1476633600,
+                "notes": "外出团建",
+                "checkintime": []
+              }
+            ]
+          },
+          "sync_holidays": {
+            "type": "boolean"
+          },
+          "groupname": {
+            "type": "string"
+          },
+          "need_photo": {
+            "type": "boolean"
+          },
+          "wifimac_infos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "note_can_use_local_pic": {
+            "type": "boolean"
+          },
+          "allow_checkin_offworkday": {
+            "type": "boolean"
+          },
+          "allow_apply_offworkday": {
+            "type": "boolean"
+          },
+          "loc_infos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocInfo"
+            },
+            "description": ""
+          },
+          "range": {
+            "$ref": "#/components/schemas/Range"
+          },
+          "create_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "white_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reporterinfo": {
+            "$ref": "#/components/schemas/Reporterinfo"
+          },
+          "ot_info": {
+            "$ref": "#/components/schemas/OtInfo"
+          },
+          "allow_apply_bk_cnt": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "option_out_range": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "create_userid": {
+            "type": "string"
+          },
+          "use_face_detect": {
+            "type": "boolean"
+          },
+          "allow_apply_bk_day_limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "update_userid": {
+            "type": "string"
+          },
+          "schedulelist": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Schedulelist"
+                },
+                {
+                  "$ref": "#/components/schemas/Schedulelist1"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "schedule_id": 1,
+                "schedule_name": "aaa",
+                "time_section": [
+                  {
+                    "work_sec": 32400,
+                    "off_work_sec": 61200,
+                    "remind_work_sec": 31800,
+                    "remind_off_work_sec": 61200
+                  }
+                ],
+                "flex_on_duty_time": 0,
+                "flex_off_duty_time": 0,
+                "allow_flex": true,
+                "late_rule": {
+                  "allow_offwork_after_time": false,
+                  "timerules": []
+                }
+              }
+            ]
+          },
+          "offwork_interval_time": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "grouptype": 1,
+          "groupid": 3,
+          "checkindate": [
+            {
+              "workdays": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "checkintime": [
+                {
+                  "work_sec": 32400,
+                  "off_work_sec": 61200,
+                  "remind_work_sec": 31800,
+                  "remind_off_work_sec": 61200
+                },
+                {
+                  "work_sec": 64800,
+                  "off_work_sec": 79200,
+                  "remind_work_sec": 64200,
+                  "remind_off_work_sec": 79200
+                }
+              ],
+              "noneed_offwork": false,
+              "limit_aheadtime": 0,
+              "flex_on_duty_time": 0,
+              "flex_off_duty_time": 0
+            }
+          ],
+          "spe_workdays": [],
+          "spe_offdays": [],
+          "sync_holidays": false,
+          "groupname": "一个人",
+          "need_photo": false,
+          "wifimac_infos": [],
+          "note_can_use_local_pic": true,
+          "allow_checkin_offworkday": false,
+          "allow_apply_offworkday": true,
+          "loc_infos": [
+            {
+              "lat": 30568996,
+              "lng": 103955601,
+              "loc_title": "成都双桂寺机场",
+              "loc_detail": "四川省成都市双流区机场东路",
+              "distance": 300
+            }
+          ],
+          "range": {
+            "party_id": [],
+            "userid": [],
+            "tagid": []
+          },
+          "create_time": 1594007056,
+          "white_users": [],
+          "type": 0,
+          "reporterinfo": {
+            "reporters": []
+          },
+          "ot_info": {
+            "type": 2,
+            "uptime": 1614326024
+          },
+          "allow_apply_bk_cnt": -1,
+          "option_out_range": 0,
+          "create_userid": "SeverusSnape",
+          "use_face_detect": false,
+          "allow_apply_bk_day_limit": -1,
+          "update_userid": "SeverusSnape",
+          "schedulelist": []
+        }
+      },
+      "Checkindate": {
+        "title": "Checkindate",
+        "type": "object",
+        "properties": {
+          "workdays": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": ""
+          },
+          "checkintime": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Checkintime"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "work_sec": 32400,
+                "off_work_sec": 61200,
+                "remind_work_sec": 31800,
+                "remind_off_work_sec": 61200
+              }
+            ]
+          },
+          "noneed_offwork": {
+            "type": "boolean"
+          },
+          "limit_aheadtime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flex_on_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flex_off_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "workdays": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "checkintime": [
+            {
+              "work_sec": 32400,
+              "off_work_sec": 61200,
+              "remind_work_sec": 31800,
+              "remind_off_work_sec": 61200
+            },
+            {
+              "work_sec": 64800,
+              "off_work_sec": 79200,
+              "remind_work_sec": 64200,
+              "remind_off_work_sec": 79200
+            }
+          ],
+          "noneed_offwork": false,
+          "limit_aheadtime": 0,
+          "flex_on_duty_time": 0,
+          "flex_off_duty_time": 0
+        }
+      },
+      "Checkintime": {
+        "title": "Checkintime",
+        "type": "object",
+        "properties": {
+          "work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "work_sec": 32400,
+          "off_work_sec": 61200,
+          "remind_work_sec": 31800,
+          "remind_off_work_sec": 61200
+        }
+      },
+      "SpeOffday": {
+        "title": "SpeOffday",
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "checkintime": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        }
+      },
+      "SpeOffday1": {
+        "title": "SpeOffday1",
+        "required": [
+          "timestamp",
+          "notes",
+          "checkintime"
+        ],
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "checkintime": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "timestamp": 1476633600,
+          "notes": "外出团建",
+          "checkintime": []
+        }
+      },
+      "LocInfo": {
+        "title": "LocInfo",
+        "required": [
+          "lat",
+          "lng",
+          "loc_title",
+          "loc_detail",
+          "distance"
+        ],
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lng": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "loc_title": {
+            "type": "string"
+          },
+          "loc_detail": {
+            "type": "string"
+          },
+          "distance": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "lat": 30568996,
+          "lng": 103955601,
+          "loc_title": "成都双桂寺机场",
+          "loc_detail": "四川省成都市双流区机场东路",
+          "distance": 300
+        }
+      },
+      "Range": {
+        "title": "Range",
+        "required": [
+          "party_id",
+          "userid",
+          "tagid"
+        ],
+        "type": "object",
+        "properties": {
+          "party_id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "userid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "tagid": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "party_id": [],
+          "userid": [],
+          "tagid": []
+        }
+      },
+      "Reporterinfo": {
+        "title": "Reporterinfo",
+        "required": [
+          "reporters"
+        ],
+        "type": "object",
+        "properties": {
+          "reporters": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "reporters": []
+        }
+      },
+      "OtInfo": {
+        "title": "OtInfo",
+        "required": [
+          "type",
+          "uptime"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "uptime": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "type": 2,
+          "uptime": 1614326024
+        }
+      },
+      "Schedulelist": {
+        "title": "Schedulelist",
+        "type": "object",
+        "properties": {
+          "schedule_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "schedule_name": {
+            "type": "string"
+          },
+          "time_section": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/TimeSection"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "work_sec": 32400,
+                "off_work_sec": 61200,
+                "remind_work_sec": 31800,
+                "remind_off_work_sec": 61200
+              }
+            ]
+          },
+          "flex_on_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flex_off_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allow_flex": {
+            "type": "boolean"
+          },
+          "late_rule": {
+            "$ref": "#/components/schemas/LateRule"
+          }
+        }
+      },
+      "TimeSection": {
+        "title": "TimeSection",
+        "type": "object",
+        "properties": {
+          "work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "time_id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "example": {
+          "work_sec": 32400,
+          "off_work_sec": 61200,
+          "remind_work_sec": 31800,
+          "remind_off_work_sec": 61200
+        }
+      },
+      "LateRule": {
+        "title": "LateRule",
+        "required": [
+          "allow_offwork_after_time",
+          "timerules"
+        ],
+        "type": "object",
+        "properties": {
+          "allow_offwork_after_time": {
+            "type": "boolean"
+          },
+          "timerules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "allow_offwork_after_time": false,
+          "timerules": []
+        }
+      },
+      "Schedulelist1": {
+        "title": "Schedulelist1",
+        "required": [
+          "schedule_id",
+          "schedule_name",
+          "time_section"
+        ],
+        "type": "object",
+        "properties": {
+          "schedule_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "schedule_name": {
+            "type": "string"
+          },
+          "time_section": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/TimeSection"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "work_sec": 32400,
+                "off_work_sec": 61200,
+                "remind_work_sec": 31800,
+                "remind_off_work_sec": 61200
+              }
+            ]
+          },
+          "flex_on_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flex_off_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allow_flex": {
+            "type": "boolean"
+          },
+          "late_rule": {
+            "$ref": "#/components/schemas/LateRule"
+          }
+        },
+        "example": {
+          "schedule_id": 1,
+          "schedule_name": "aaa",
+          "time_section": [
+            {
+              "work_sec": 32400,
+              "off_work_sec": 61200,
+              "remind_work_sec": 31800,
+              "remind_off_work_sec": 61200
+            }
+          ],
+          "flex_on_duty_time": 0,
+          "flex_off_duty_time": 0,
+          "allow_flex": true,
+          "late_rule": {
+            "allow_offwork_after_time": false,
+            "timerules": []
+          }
+        }
+      },
+      "TimeSection21": {
+        "title": "TimeSection21",
+        "type": "object",
+        "properties": {
+          "work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "remind_off_work_sec": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "time_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rest_begin_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rest_end_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allow_rest": {
+            "type": "boolean"
+          }
+        },
+        "example": {
+          "work_sec": 32400,
+          "off_work_sec": 61200,
+          "remind_work_sec": 31800,
+          "remind_off_work_sec": 61200
+        }
+      },
+      "Schedulelist2": {
+        "title": "Schedulelist2",
+        "type": "object",
+        "properties": {
+          "schedule_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "schedule_name": {
+            "type": "string"
+          },
+          "time_section": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/TimeSection"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "description": "",
+            "example": [
+              {
+                "work_sec": 32400,
+                "off_work_sec": 61200,
+                "remind_work_sec": 31800,
+                "remind_off_work_sec": 61200
+              }
+            ]
+          },
+          "flex_on_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "flex_off_duty_time": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allow_flex": {
+            "type": "boolean"
+          },
+          "late_rule": {
+            "$ref": "#/components/schemas/LateRule"
+          },
+          "limit_aheadtime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noneed_offwork": {
+            "type": "boolean"
+          },
+          "limit_offtime": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "max_allow_arrive_early": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "max_allow_arrive_late": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "建立连接"
+    },
+    {
+      "name": "成员管理"
+    },
+    {
+      "name": "部门管理"
+    },
+    {
+      "name": "素材管理"
+    },
+    {
+      "name": "打卡"
+    }
+  ]
+}
